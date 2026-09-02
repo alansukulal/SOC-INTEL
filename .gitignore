@@ -1,0 +1,31 @@
+# ==========================================
+# SOC-INTEL Git Ignore
+# ==========================================
+
+# Virtual environment
+socpro/
+
+# Environment variables and secrets
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Build / package files
+build/
+dist/
+*.egg-info/
+
+# Test / coverage cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
