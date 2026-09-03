@@ -1,0 +1,54 @@
+{
+  "incident_id": "INC-001",
+  "title": "Suspicious PowerShell Activity",
+  "description": "Suspicious PowerShell execution detected on workstation",
+  "severity": "high",
+  "status": "new",
+  "source": "sentinel",
+
+  "entities": [
+    {
+      "entity_type": "host",
+      "value": "WIN-WS01",
+      "attributes": {
+        "os": "Windows 11"
+      }
+    },
+    {
+      "entity_type": "user",
+      "value": "testuser"
+    },
+    {
+      "entity_type": "ip",
+      "value": "10.20.30.40"
+    }
+  ],
+
+  "alerts": [
+    {
+      "alert_id": "ALT-001",
+      "title": "Encoded PowerShell Execution",
+      "description": "Encoded PowerShell command detected",
+      "severity": "high",
+      "source": "sentinel",
+      "product": "Microsoft Sentinel",
+      "rule_name": "Suspicious PowerShell Execution",
+      "timestamp": "2026-09-03T10:30:00Z",
+
+      "tactics": [
+        "Execution"
+      ],
+
+      "entities": [
+        {
+          "entity_type": "host",
+          "value": "WIN-WS01"
+        },
+        {
+          "entity_type": "user",
+          "value": "testuser"
+        }
+      ]
+    }
+  ]
+}
