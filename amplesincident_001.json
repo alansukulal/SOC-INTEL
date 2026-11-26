@@ -1,0 +1,16 @@
+[35m.env.example[m[36m:[m[32m1[m[36m:[mSOC_INTEL_SENTINEL_[1;31mTENANT_ID[m=
+[35m.env.example[m[36m:[m[32m2[m[36m:[mSOC_INTEL_SENTINEL_[1;31mSUBSCRIPTION_ID[m=
+[35m.env.example[m[36m:[m[32m5[m[36m:[mSOC_INTEL_SENTINEL_[1;31mWORKSPACE_ID[m=
+[35m.env.example[m[36m:[m[32m7[m[36m:[mSOC_INTEL_DEV_[1;31mCLIENT_ID[m=
+[35mdata/samples/incident_001.json[m[36m:[m[32m2[m[36m:[m  "[1;31mincident[m_id": "INC-001",
+[35msrc/soc_intel/ingestion/loader.py[m[36m:[m[32m3[m[36m:[mfrom soc_intel.models.[1;31mincident[m import [1;31mIncident[m
+[35msrc/soc_intel/ingestion/loader.py[m[36m:[m[32m5[m[36m:[m#this means the filepath can be str or a path and it should return an [1;31mincident[m schema data and last it should validate the json and return the data if proper data is there else error.
+[35msrc/soc_intel/ingestion/loader.py[m[36m:[m[32m6[m[36m:[mdef load_[1;31mincident[m(file_path: str | Path) -> [1;31mIncident[m:
+[35msrc/soc_intel/ingestion/loader.py[m[36m:[m[32m9[m[36m:[m    return [1;31mIncident[m.model_validate_json(json_data)
+[35msrc/soc_intel/models/enums.py[m[36m:[m[32m3[m[36m:[m#enum is for defining fixed values and this is for both alert and [1;31mincident[ms
+[35msrc/soc_intel/models/enums.py[m[36m:[m[32m12[m[36m:[mclass [1;31mIncident[mStatus(str, Enum):
+[35msrc/soc_intel/models/incident.py[m[36m:[m[32m4[m[36m:[mfrom soc_intel.models.enums import [1;31mIncident[mStatus, Severity
+[35msrc/soc_intel/models/incident.py[m[36m:[m[32m8[m[36m:[m#[1;31mIncident[ms structure that we will use 
+[35msrc/soc_intel/models/incident.py[m[36m:[m[32m10[m[36m:[mclass [1;31mIncident[m(BaseModel):
+[35msrc/soc_intel/models/incident.py[m[36m:[m[32m11[m[36m:[m    [1;31mincident[m_id: str
+[35msrc/soc_intel/models/incident.py[m[36m:[m[32m14[m[36m:[m    status:[1;31mIncident[mStatus=[1;31mIncident[mStatus.NEW
